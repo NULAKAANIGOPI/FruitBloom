@@ -1,0 +1,905 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.7
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+.header {
+    height: 82px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100
+}
+
+.header-inner {
+    width: 88%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #4c8d08
+}
+
+.logo .orange {
+    color: #ff7200
+}
+
+.nav {
+    display: flex;
+    gap: 35px;
+    height: 100%;
+    align-items: center
+}
+
+.nav a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+    position: relative
+}
+
+.nav a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #ff7200;
+    transition: .3s
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #ff7200
+}
+
+.nav a:hover:after,
+.nav a.active:after {
+    width: 100%
+}
+
+.header-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 22px;
+    color: #4d8e08
+}
+
+.header-icons a:hover {
+    color: #ff7200
+}
+
+.hero-slider {
+    height: 620px;
+    position: relative;
+    overflow: hidden;
+    color: #222;
+}
+
+.slide-one {
+    width: 100%;
+    height: 100%;
+    background:url("images/hero-fruits.jpg") center/cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 88%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-small {
+    font-size: 17px;
+    color: #ff7600;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.hero-content h1 {
+    font-size: 68px;
+    line-height: 1.08;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.hero-content h1 span {
+    color: #7dbd00;
+}
+
+.hero-content > p:not(.hero-small) {
+    max-width: 530px;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.hero-btn {
+    background: #ff7600;
+    color: #fff;
+    padding: 12px 23px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    background: #67a800;
+}
+
+.hero-btn.light {
+    background: transparent;
+    color: #ff7600;
+    border: 2px solid #ff7600;
+}
+
+.hero-btn.light:hover {
+    background: #ff7600;
+    color: #fff;
+}
+
+.feature-wrap {
+    position: relative;
+    margin-top: -45px;
+    /* z-index: 5 */
+}
+
+.features {
+    width: 82%;
+    margin: auto;
+    background:beige;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0 8px 30px #00000012;
+    padding: 28px 20px
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-right: 1px solid #ddd
+}
+
+.feature:last-child {
+    border-right: 0
+}
+
+.feature-icon {
+    font-size: 32px;
+    color: #6aa900
+}
+
+.feature h3 {
+    font-size: 16px
+}
+
+.feature p {
+    font-size: 13px;
+    color: #777
+}
+
+.section {
+    width: 86%;
+    margin: auto;
+    padding: 90px 0
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px
+}
+
+.section-heading p {
+    color: #ff7500;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 3px 0 8px
+}
+
+.section-heading>span {
+    color: #777;
+    font-size: 14px
+}
+
+.heading-line {
+    width: 50px;
+    height: 3px;
+    background: #ff7500;
+    margin: 12px auto
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin: auto
+}
+
+.product-card {
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 22px 22px 28px;
+    transition: .3s;
+    background: #fff
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px #00000012
+}
+
+.product-image {
+    height: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px
+}
+
+.product-image img {
+    width: 98%;
+    height: 80%;
+    padding: 1%;
+}
+
+.product-card h3 {
+    font-size: 20px
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #888
+}
+
+.product-card strong {
+    color: #ff7500
+}
+
+.product-btn {
+    display: inline-block;
+    background: #6ba800;
+    color: #fff;
+    padding: 8px 18px;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 2px
+}
+
+.product-btn:hover {
+    background: #ff7500
+}
+
+.deal-section {
+    width: 100%;
+    background: #f5f5f5;
+    min-height: 360px;
+    padding: 55px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px
+}
+
+.deal-image {
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.deal-image img {
+    width: 350px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    filter: saturate(1.2)
+}
+
+.discount-badge {
+    position: absolute;
+    left: 16%;
+    top: 20px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #ff7b20;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    z-index: 2
+}
+
+.discount-badge small {
+    font-size: 8px
+}
+
+.deal-content {
+    max-width: 500px
+}
+
+.deal-label {
+    color: #ff7200;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px
+}
+
+.deal-content h2 {
+    font-size: 35px;
+    color: #ff7200;
+    line-height: 1.1
+}
+
+.deal-content h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 12px
+}
+
+.deal-content>p:not(.deal-label) {
+    font-size: 13px;
+    color: #777;
+    max-width: 500px
+}
+
+.countdown {
+    display: flex;
+    gap: 5px;
+    margin: 18px 0
+}
+
+.countdown div {
+    width: 58px;
+    height: 58px;
+    border: 1px solid #ff7a20;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.countdown strong {
+    font-size: 18px;
+    color: #ff7200;
+    line-height: 1
+}
+
+.countdown span {
+    font-size: 8px;
+    color: #777
+}
+
+.deal-btn {
+    display: inline-block;
+    background: #ff7a20;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.deal-btn:hover {
+    background: #6ba800
+}
+
+.testimonial-section {
+    background: linear-gradient(#172500e6, #172500e6), url("images/fruit-basket.jpg") center/cover;
+    padding: 90px 7%;
+    color: #fff
+}
+
+.white-heading p {
+    color: #b4e500
+}
+
+.white-heading h2 {
+    color: #fff
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto
+}
+
+.testimonial {
+    background: #ffffff0f;
+    border: 1px solid #ffffff33;
+    padding: 32px;
+    text-align: center
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #ff7600;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 700
+}
+
+.stars {
+    color: #ffb300;
+    margin: 10px
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #eee
+}
+
+.testimonial h4 {
+    margin-top: 13px
+}
+
+.testimonial small {
+    color: #b8b8b8
+}
+
+.about-section {
+    width: 86%;
+    margin: auto;
+    padding: 95px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center
+}
+
+.about-image {
+    position: relative
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover
+}
+
+.year-box {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: #ff7600;
+    color: #fff;
+    padding: 18px 25px;
+    text-align: center
+}
+
+.year-box strong,
+.year-box span {
+    display: block
+}
+
+.year-box span {
+    font-size: 25px;
+    font-weight: 800
+}
+
+.about-content .eyebrow {
+    font-size: 13px;
+    color: #ff7600;
+    font-weight: 800;
+    letter-spacing: 2px
+}
+
+.about-content h2 {
+    font-size: 40px
+}
+
+.about-content h2 span {
+    color: #6ba800
+}
+
+.about-content p {
+    color: #777;
+    font-size: 14px;
+    margin: 12px 0
+}
+
+.read-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #6ba800;
+    color: #fff;
+    padding: 10px 22px;
+    font-weight: 700
+}
+
+.read-btn:hover {
+    background: #ff7600
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px
+}
+
+.news-card {
+    background: #fff;
+    border: 1px solid #eee
+}
+
+.news-card>img {
+    padding:2%;
+    width: 98%;
+    height: 210px;
+}
+
+.news-body {
+    padding: 22px
+}
+
+.news-body h3 {
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 7px
+}
+
+.news-body small {
+    color: #ff7600
+}
+
+.news-body p {
+    font-size: 13px;
+    color: #777;
+    margin: 10px 0
+}
+
+.news-body a {
+    color: #6ba800;
+    font-size: 13px;
+    font-weight: 800
+}
+
+.news-body a:hover {
+    color: #ff7600
+}
+
+.center {
+    text-align: center;
+    margin-top: 35px
+}
+
+.more-news {
+    display: inline-block;
+    background: #6ba800;
+    color: #fff;
+    padding: 10px 22px;
+    font-weight: 700
+}
+
+.more-news:hover {
+    background: #ff7600
+}
+
+.newsletter {
+    background: #f5f5f5;
+    padding: 60px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px
+}
+
+.newsletter h2 {
+    font-size: 28px
+}
+
+.newsletter p {
+    color: #777;
+    font-size: 14px
+}
+
+.newsletter form {
+    display: flex
+}
+
+.newsletter input {
+    width: 300px;
+    padding: 13px;
+    border: 1px solid #ddd;
+    outline: none
+}
+
+.newsletter button {
+    border: 0;
+    background: #ff7600;
+    color: #fff;
+    padding: 0 22px;
+    font-weight: 700
+}
+
+.footer {
+    background: #101c04;
+    color: #bbb;
+    padding: 65px 7%;
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 1.3fr .8fr;
+    gap: 45px
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: 13px;
+    font-size: 17px
+}
+
+.footer p,
+.footer a {
+    font-size: 13px
+}
+
+.footer a {
+    display: block;
+    margin: 5px 0;
+    color: #bbb
+}
+
+.footer a:hover {
+    color: #9bd000
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #6ba800
+}
+
+.footer-logo span {
+    color: #ff7600
+}
+
+.copyright {
+    text-align: center;
+    background: #0a1202;
+    color: #888;
+    padding: 14px;
+    font-size: 12px
+}
+
+@media(max-width:900px) {
+    .header-inner {
+        width: 92%
+    }
+
+    .nav {
+        gap: 16px
+    }
+
+    .hero-content h1 {
+        font-size: 53px
+    }
+
+    .features {
+        width: 90%
+    }
+
+    .product-grid,
+    .testimonial-grid,
+    .news-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .deal-section,
+    .about-section {
+        grid-template-columns: 1fr
+    }
+
+    .deal-content {
+        text-align: center;
+        margin: auto
+    }
+
+    .countdown {
+        justify-content: center
+    }
+
+    .discount-badge {
+        left: 23%
+    }
+
+    .about-image {
+        max-width: 700px;
+        margin: auto
+    }
+
+    .newsletter {
+        flex-direction: column;
+        text-align: center
+    }
+
+    .footer {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width:600px) {
+    .header {
+        height: auto;
+        padding: 15px 0
+    }
+
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px
+    }
+
+    .nav a {
+        font-size: 12px
+    }
+
+    .header-icons {
+        position: absolute;
+        right: 5%
+    }
+
+    .hero-slider {
+        height: 560px
+    }
+
+    .hero-content {
+        width: 90%
+    }
+
+    .hero-content h1 {
+        font-size: 43px
+    }
+
+    .hero-content>p:not(.hero-small) {
+        font-size: 15px
+    }
+
+    .hero-btn {
+        padding: 10px 15px;
+        font-size: 13px
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        width: 90%
+    }
+
+    .feature {
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+        padding: 12px
+    }
+
+    .feature:last-child {
+        border-bottom: 0
+    }
+
+    .section {
+        width: 90%;
+        padding: 65px 0
+    }
+
+    .section-heading h2 {
+        font-size: 31px
+    }
+
+    .product-grid,
+    .testimonial-grid,
+    .news-grid {
+        grid-template-columns: 1fr
+    }
+
+    .deal-section {
+        padding: 45px 6%;
+        gap: 15px
+    }
+
+    .deal-image img {
+        width: 280px;
+        height: 195px
+    }
+
+    .discount-badge {
+        left: 8%
+    }
+
+    .about-section {
+        width: 90%;
+        padding: 65px 0
+    }
+
+    .about-content h2 {
+        font-size: 32px
+    }
+
+    .about-image img {
+        height: 300px
+    }
+
+    .newsletter form {
+        width: 100%
+    }
+
+    .newsletter input {
+        width: 70%
+    }
+
+    .newsletter button {
+        width: 30%
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        padding: 50px 8%
+    }
+}
